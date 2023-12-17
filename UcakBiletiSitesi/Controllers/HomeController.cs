@@ -18,6 +18,12 @@ namespace UcakBiletiSitesi.Controllers
             return View();
         }
 
+        [HttpPost]
+        public string Kaydet(Yolcu yolcu)
+        {
+            string txt = yolcu.Email + " email adresine sahip kullanici kaydedildi"+yolcu.Ad+yolcu.Soyad+yolcu.KimlikNo;
+            return txt;
+        }
         public IActionResult Privacy()
         {
             return View();

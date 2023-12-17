@@ -3,6 +3,36 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form method="post" action="..\Home\Kaydet">
+        <table>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input type="email" name="Email" required /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>:</td>
+                <td><input type="password" name="Password" required /></td>
+            </tr>
+            <tr>
+                <td>Ad</td>
+                <td>:</td>
+                <td><input type="text" name="Ad" required /></td>
+            </tr>
+            <tr>
+                <td>Soyad</td>
+                <td>:</td>
+                <td><input type="text" name="Soyad" required /></td>
+            </tr>
+            <tr>
+                <td>TC No</td>
+                <td>:</td>
+                <td><input type="text" name="KimlikNo" required /></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center"><input type="submit" value="Kaydet" /></td>
+            </tr>
+        </table>
+    </form>
 </div>
