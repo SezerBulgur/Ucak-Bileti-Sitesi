@@ -6,6 +6,9 @@ namespace UcakBiletiSitesi.Controllers
 {
     public class HomeController : Controller
     {
+        IVeritabani Veritabani = new SanalVeritabani();
+
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -21,7 +24,20 @@ namespace UcakBiletiSitesi.Controllers
         [HttpPost]
         public string Kaydet(Yolcu yolcu)
         {
-            string txt = yolcu.Email + " email adresine sahip kullanici kaydedildi"+yolcu.Ad+yolcu.Soyad+yolcu.KimlikNo;
+            Veritabani.YolcuEkle(yolcu);
+            string txt = yolcu.Email + " email adresine sahip kullanici kaydedildi";
+            return txt;      
+        }
+
+        [HttpPost]
+        public string Dogrula(Yolcu yolcu)
+        {
+            string txt = "sisteme giris yapialamadi tekrar deneyiniz";
+            if (Veritabani.YolcuDogrula(yolcu))
+            {
+                txt = yolcu.Email + " sisteme basari ile giris yapti";
+            }
+            
             return txt;
         }
         public IActionResult Privacy()
