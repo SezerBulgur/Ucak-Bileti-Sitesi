@@ -30,15 +30,15 @@ namespace UcakBiletiSitesi.Controllers
         }
 
         [HttpPost]
-        public string Dogrula(Yolcu yolcu)
+        public IActionResult Dogrula(Yolcu yolcu)
         {
-            string txt = "sisteme giris yapialamadi tekrar deneyiniz";
             if (Veritabani.YolcuDogrula(yolcu))
             {
-                txt = yolcu.Email + " sisteme basari ile giris yapti";
+                HttpContext.Session.SetString("SessionUser", yolcu.Email);
+                return View("Deneme");
             }
-            
-            return txt;
+            ViewBag.Hata = "Hatali giris yapildi. Lutfen tekrar deneyiniz";
+            return View("Index");
         }
         public IActionResult Privacy()
         {

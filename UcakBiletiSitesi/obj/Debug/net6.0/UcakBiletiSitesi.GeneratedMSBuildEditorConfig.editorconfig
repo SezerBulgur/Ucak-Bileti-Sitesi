@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\sezer\WebP-Proje\Ucak-Bileti-Sitesi\UcakBiletiSitesi
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/sezer/WebP-Proje/Ucak-Bileti-Sitesi/UcakBiletiSitesi/Views/Home/Deneme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZW5lbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sezer/WebP-Proje/Ucak-Bileti-Sitesi/UcakBiletiSitesi/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
