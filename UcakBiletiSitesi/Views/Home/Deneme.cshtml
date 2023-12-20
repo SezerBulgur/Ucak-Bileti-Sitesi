@@ -1,1 +1,7 @@
-﻿<h1>Sessiondan gelen kullanici: @Context.Session.GetString("SessionUser")</h1>
+﻿@model Yolcu
+<h1>Sessiondan gelen kullanici: @Context.Session.GetString("SessionUser")</h1>
+
+@foreach(var bilet in Model.Biletler)
+{
+    <h4>@bilet.deneme</h4>
+}

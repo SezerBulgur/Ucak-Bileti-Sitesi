@@ -34,8 +34,12 @@ namespace UcakBiletiSitesi.Controllers
         {
             if (Veritabani.YolcuDogrula(yolcu))
             {
+                //deneme olarak olusturulan bilet yolcuya aktarilmasi
+                Bilet b = new Bilet(yolcu);
+
+
                 HttpContext.Session.SetString("SessionUser", yolcu.Email);
-                return View("Deneme");
+                return View("Deneme", yolcu);
             }
             ViewBag.Hata = "Hatali giris yapildi. Lutfen tekrar deneyiniz";
             return View("Index");
