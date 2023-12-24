@@ -29,6 +29,7 @@ namespace UcakBiletiSitesi.Controllers
             return txt;      
         }
 
+        /*
         [HttpPost]
         public IActionResult Dogrula(Yolcu yolcu)
         {
@@ -44,6 +45,7 @@ namespace UcakBiletiSitesi.Controllers
             ViewBag.Hata = "Hatali giris yapildi. Lutfen tekrar deneyiniz";
             return View("Index");
         }
+        */
         public IActionResult Privacy()
         {
             return View();

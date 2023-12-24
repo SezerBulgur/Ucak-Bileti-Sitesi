@@ -23,16 +23,21 @@ namespace UcakBiletiSitesi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Dogrula(Yolcu yolcu)
+        public IActionResult Dogrula(Kullanici y)
         {
-            if (Veritabani.YolcuDogrula(yolcu))
+            if (ModelState.IsValid) 
             {
-                //deneme olarak olusturulan bilet yolcuya aktarilmasi
-                Bilet b = new Bilet(yolcu);
+                Yolcu yolcu = Veritabani.YolcuDogrula(y);
+                if (yolcu != null)
+                {
+                    //deneme olarak olusturulan bilet yolcuya aktarilmasi
+                    Bilet b = new Bilet(yolcu);
 
 
-                HttpContext.Session.SetString("SessionUser", yolcu.Email);
-                return View("../Home/Deneme", yolcu);
+                    HttpContext.Session.SetString("SessionUser", yolcu.Email);
+                    return View("Bilgi", yolcu);
+                }
+                
             }
             ViewBag.Hata = "Hatali giris yapildi. Lutfen tekrar deneyiniz";
             return View("GirisYap");

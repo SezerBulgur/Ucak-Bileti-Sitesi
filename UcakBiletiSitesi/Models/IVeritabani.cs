@@ -2,7 +2,7 @@
 {
     public interface IVeritabani
     {
-        public bool YolcuDogrula(Yolcu yolcu);
+        public Yolcu YolcuDogrula(Kullanici yolcu);
         public void YolcuEkle(Yolcu yolcu);
         public void YolcuSil(Yolcu yolcu);
         public bool AdminDogrula(Admin admin);

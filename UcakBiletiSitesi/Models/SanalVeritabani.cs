@@ -52,22 +52,24 @@
             throw new NotImplementedException();
         }
 
-        public bool YolcuDogrula(Yolcu yolcu)
+        public Yolcu? YolcuDogrula(Kullanici _yolcu)
         {
-            foreach (var y in Yolcular) 
+            foreach (var yolcu in Yolcular) 
             {
-                if (y.Email == yolcu.Email && y.Password == yolcu.Password)
+                if (yolcu.Email == _yolcu.Email && yolcu.Password == _yolcu.Password)
                 {
-                    return true;
+                    return (Yolcu?)yolcu;
                 }
             }
-            return false;
+            return null;
         }
 
+        
         public void YolcuEkle(Yolcu yolcu)
         {
             
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
+            /*
             if (YolcuDogrula(yolcu))
             {
                 Console.WriteLine("Yolcu zaten ekli");
@@ -75,6 +77,7 @@
             {
                 Console.WriteLine("Yolcu ekleniyor...");
             }
+            */
         }
 
         public void YolcuSil(Yolcu yolcu)
