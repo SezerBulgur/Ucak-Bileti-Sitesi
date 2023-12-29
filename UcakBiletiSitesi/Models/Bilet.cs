@@ -1,8 +1,21 @@
-﻿namespace UcakBiletiSitesi.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace UcakBiletiSitesi.Models
 {
     public class Bilet
     {
-        public Yolcu yolcu { get; set; }
+        [Key] public int BiletId { get; set; }
+
+        [ForeignKey("Yolcu")]
+        public int YolcuId { get; set; }
+        public Yolcu? Yolcu { get; set; }
+
+        [ForeignKey("Ucus")]
+        public int UcusId { get; set; }
+        public Ucus? Ucus { get; set; }
+
+        /*
         public string deneme { get; set; }
         public Bilet(Yolcu y) 
         {
@@ -10,5 +23,6 @@
             deneme = "bu bir deneme biletidir";
             yolcu.Biletler.Add(this);
         }
+        */
     }
 }

@@ -1,7 +1,13 @@
-﻿namespace UcakBiletiSitesi.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace UcakBiletiSitesi.Models
 {
     public class Ucak
     {
-        //Ucak Sinifi Olusturulacaktir
+        [Key] public int UcakId { get; set; }
+
+        public string Model { get; set; }
+
+        //koltuk duzeni olusturulacak
     }
 }

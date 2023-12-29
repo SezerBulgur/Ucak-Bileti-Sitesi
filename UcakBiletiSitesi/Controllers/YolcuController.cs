@@ -31,7 +31,7 @@ namespace UcakBiletiSitesi.Controllers
                 if (yolcu != null)
                 {
                     //deneme olarak olusturulan bilet yolcuya aktarilmasi
-                    Bilet b = new Bilet(yolcu);
+                    //Bilet b = new Bilet(yolcu);
 
 
                     HttpContext.Session.SetString("SessionUser", yolcu.Email);
